@@ -5,10 +5,20 @@ var Quote = function(text, author){
   this.author = author;
 }
 
+Quote.prototype = {
+  addToArray: function(){
+    allQuotes.push(this);
+  }
+}
+
 var jayQuote = new Quote("Visual Basic is the way forward, I don't know why we are doing Javascript.", "Jay Chetty");
+jayQuote.addToArray();
 var rickQuote = new Quote("The only CSS you need to know is background-color: tomato", "Rick");
+rickQuote.addToArray();
 var keithQuote = new Quote("No Blockers *smug tone*", "Keith");
+keithQuote.addToArray();
 var valQuote = new Quote("Scaffold is nothing but a fiery hell.", "Valerie");
+valQuote.addToArray();
 
 console.log("All Quotes Array:", allQuotes);
 
@@ -41,7 +51,7 @@ window.onload = function(){
 
     var newQuote = new Quote(quoteInputText, authorInputText);
     console.log('newquote', newQuote);
-    allQuotes.push(newQuote);
+    newQuote.addToArray();
     console.log(allQuotes);
     renderQuotes();
 
