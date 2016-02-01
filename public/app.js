@@ -12,3 +12,20 @@ var keithQuote = new Quote("No Blockers *smug tone*", "Keith");
 var valQuote = new Quote("Scaffold is nothing but a fiery hell.", "Valerie");
 
 console.log("All Quotes Array:", allQuotes);
+
+window.onload = function(){
+
+  for (var i = 0; i < allQuotes.length; i++) {
+    var quote = document.getElementById("quote");
+    var quoteArticle = document.createElement("article");
+    var blockQuote = document.createElement("blockquote");
+    var cite = document.createElement("cite");
+
+    cite.innerText = allQuotes[i].author;
+    blockQuote.innerText = this.allQuotes[i].text;
+    quoteArticle.classList.add("quote");
+    blockQuote.appendChild(cite);
+    quoteArticle.appendChild(blockQuote);
+    quote.appendChild(quoteArticle);
+  };
+}
