@@ -61,6 +61,7 @@ window.onload = function(){
 
   var button = document.getElementById("addbutton");
   button.onclick = handleClick;
+
 }
 
 
